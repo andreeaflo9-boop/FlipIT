@@ -561,7 +561,7 @@ export default function GoalsScreen() {
                     <View style={styles.premiumHint}>
                         <IconSymbol name="crown.fill" size={16} color="#C9A84C" />
                         <Text style={styles.premiumHintText}>
-                            Unlock "I Want It Now" with Royal Flush Premium
+                            Unlock I Want It Now with Royal Flush Premium
                         </Text>
                     </View>
                 )}
