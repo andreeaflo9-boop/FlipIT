@@ -9,7 +9,6 @@ import {
 } from "react-native";
 import { useRouter } from "expo-router";
 import { IconSymbol } from "@/components/ui/icon-symbol";
-import { ScreenContainer } from "@/components/screen-container";
 
 interface GlossaryTerm {
     id: string;

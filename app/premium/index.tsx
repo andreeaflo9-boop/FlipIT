@@ -10,7 +10,6 @@ import {
 import { useRouter } from "expo-router";
 import { LinearGradient } from "expo-linear-gradient";
 import { IconSymbol } from "@/components/ui/icon-symbol";
-import { ScreenContainer } from "@/components/screen-container";
 import { useFinance } from "@/lib/finance-context";
 
 const FEATURES = [
