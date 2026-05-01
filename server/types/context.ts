@@ -3,7 +3,7 @@ export async function createContext(
 ): Promise<TrpcContext> {
     const token = opts.req.headers.authorization;
 
-    let user: User | null = null;
+    let user: Player | null = null;
 
     if (token) {
         user = {

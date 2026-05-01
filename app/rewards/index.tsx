@@ -1,5 +1,5 @@
 import React from "react";
-mport { ScreenContainer } from "@/components/screen-container";
+import { ScreenContainer } from "@/components/screen-container";
 import {
     View,
     Text,
