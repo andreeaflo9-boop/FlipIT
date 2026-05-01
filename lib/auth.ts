@@ -1,4 +1,4 @@
-
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import { Platform } from "react-native";
 
 const TOKEN_KEY = "flipit_auth_token";
@@ -19,7 +19,7 @@ export async function getAuthToken(): Promise<string | null> {
         return window.localStorage.getItem(TOKEN_KEY);
     }
 
-    return SecureStore.getItemAsync(TOKEN_KEY);
+    return AsyncStorage.getItem(TOKEN_KEY);
 }
 
 export async function setAuthToken(token: string): Promise<void> {
@@ -28,7 +28,7 @@ export async function setAuthToken(token: string): Promise<void> {
         return;
     }
 
-    await SecureStore.setItemAsync(TOKEN_KEY, token);
+    await AsyncStorage.setItem(TOKEN_KEY, token);
 }
 
 export async function removeAuthToken(): Promise<void> {
@@ -37,13 +37,13 @@ export async function removeAuthToken(): Promise<void> {
         return;
     }
 
-    await SecureStore.deleteItemAsync(TOKEN_KEY);
+    await AsyncStorage.deleteItem(TOKEN_KEY);
 }
 
 export async function getUserInfo(): Promise<User | null> {
     const value = hasLocalStorage()
         ? window.localStorage.getItem(USER_KEY)
-        : await SecureStore.getItemAsync(USER_KEY);
+        : await AsyncStorage.getItem(USER_KEY);
 
     if (!value) return null;
 
@@ -63,7 +63,7 @@ export async function setUserInfo(user: User): Promise<void> {
         return;
     }
 
-    await SecureStore.setItemAsync(USER_KEY, value);
+    await AsyncStorage.setItem(USER_KEY, value);
 }
 
 export async function clearUserInfo(): Promise<void> {
@@ -72,7 +72,7 @@ export async function clearUserInfo(): Promise<void> {
         return;
     }
 
-    await SecureStore.deleteItemAsync(USER_KEY);
+    await AsyncStorage.deleteItem(USER_KEY);
 }
 
 export async function clearAuthStorage(): Promise<void> {
