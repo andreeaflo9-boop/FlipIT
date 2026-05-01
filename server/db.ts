@@ -1,7 +1,7 @@
 import { eq } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
 import { type InsertUser, users } from "../drizzle/schema";
-import { ENV } from "./env";
+
 
 let dbInstance: ReturnType<typeof drizzle> | null = null;
 

@@ -1,4 +1,4 @@
-import * as SecureStore from "expo-secure-store";
+
 import { Platform } from "react-native";
 
 const TOKEN_KEY = "flipit_auth_token";

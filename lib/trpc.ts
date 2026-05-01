@@ -1,8 +1,7 @@
-import { createTRPCReact } from "@trpc/react-query";
-import { httpBatchLink } from "@trpc/client";
+
+
 import superjson from "superjson";
 import type { AppRouter } from "@/server/routers";
-import { getApiBaseUrl } from "@/constants/oauth";
 import * as Auth from "@/lib/auth";
 
 export const trpc = createTRPCReact<AppRouter>();
@@ -14,7 +13,6 @@ export function createTRPCClient() {
                 url: `${getApiBaseUrl()}/api/trpc`,
                 transformer: superjson,
                 async headers() {
-                    const token = await Auth.getSessionToken();
                     return token ? { Authorization: `Bearer ${token}` } : {};
                 },
                 fetch(url, options) {
